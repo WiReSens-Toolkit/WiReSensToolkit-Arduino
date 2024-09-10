@@ -83,10 +83,13 @@ void loop()
 *readNode()* will read the voltage at the intersection of the readWire and groundWire specified. This provides more configurable readout, allowing for any subset of nodes in your configured sensing array to be read in any order. It will send these values every numNodes/2 readings (in this method we reserve packet space for specifying node location) using your configured communication protocol. 
 
 ```cpp
+void loop()
+{
   kit->readNode(0, 0);
   kit->readNode(0, 1);
   kit->readNode(0, 2);
   kit->readNode(0, 3);
+}
 ```
 
 
