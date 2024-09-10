@@ -456,8 +456,9 @@ boolean calibrationCallback()
  * ADC range while avoiding saturation
  *
  * @param duration Duration of the calibration period (in ms)
+ * @param saturatedPercentage Percentage of array to monitor for saturation
  */
-void WiSensToolkit::calibrate(long duration)
+void WiSensToolkit::calibrate(long duration, double saturatedPercentage)
 {
     uint8_t calResistance = 120; // Resistance to run calibration at (=3125 ohms to capture maximum possible sensitivity)
     uint8_t packetCount = 0;

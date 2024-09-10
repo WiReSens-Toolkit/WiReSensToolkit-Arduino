@@ -526,13 +526,12 @@ public:
     ReadoutConfig *thisReadoutConfig;
     WiSensToolkit(ReadoutConfig *readoutConfig, CommProtocol commType, CommConfig *commConfig, int sendId);
     void scanArray();
-    void calibrate(long duration);
+    void calibrate(long, double saturatedPercentage);
     bool serial_communication = true;
     void readNode(int readWire, int groundWire);
     float p = 15;
     float d = 81;
     bool intermittent = false;
-    double saturatedPercentage;
 
 private:
     class MyServerCallbacks : public BLEServerCallbacks
